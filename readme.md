@@ -49,7 +49,7 @@ After you clone the repo:
 
 ### Customize notification data
 
-In `/app/file.json` latest request received from sentry will be stored in json format.
+In `/app/file.json` **inside container** latest request received from sentry will be stored in json format.
 
 You can customize the fields sent as a notification by editting the `index.js` file, then rebuilding the container with steps above.
 
