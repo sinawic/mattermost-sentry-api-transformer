@@ -1,5 +1,5 @@
 
-# Mattermost Sentry API transformer
+# Mattermost Sentry Webhook Notification API transformer
 
 Since sentry does not support integration directly to mattermost for alerts and ..
 
