@@ -1,0 +1,9 @@
+version: '3.3'
+services:
+  mattermost-sentry-api-transformer:
+    image: sinawic/mattermost-sentry-api-transformer
+    restart: always
+    env_file: .env
+    ports:
+      - 3000:3000
+
