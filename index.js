@@ -13,21 +13,21 @@ app.use(bodyParser({limit: '50mb'}))
 app.use(express.json())
 
 app.post('/', (req, res) => {
-  const {id, project, url, event} = req.body
-  const {type, title, event_id} = event
+  const {event} = req.body.data
+  const {type, title, event_id, project, message, web_url, issue_id} = event
 
-  console.log('=> received req:', id, project, url, type, title, event_id)
+  console.log('=> received req:', type, title, event_id, project, message, web_url, issue_id)
 
   notify({
     text: type,
     attachments: [{
       fallback: title,
       color: '#f00',
-      pretext: title,
-      text: `${project} - ${id}`,
+      pretext: message,
+      text: `project_id: ${project} - issue_id: ${issue_id}`,
       author_name: `event id: ${event_id}`,
       title: 'reveal issue in sentry',
-      title_link: url
+      title_link: web_url
     }]
   })
 
